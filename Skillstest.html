@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Instruments Information Board</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
+
+    <style>
+        body {
+            background-image: url('https://cdn.cosmos.so/962a64bc-897a-4651-9972-71322eea4398?format=webp');
+            background-size: cover;
+            color: #f3f0ff;
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .main-container {
+            max-width: 480px;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .titlething {
+            color: #244906;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .smalltext {
+            color: #0f6023;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .card {
+            background-color: #074213bc;
+            border: 1px solid #001a06;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+        .navbar {
+            background-color: #0d180cbd;
+            padding: 15px 5%;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .rohansportfolio {
+            color: #e8eee2 !important;
+            font-size: 21px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .navbar .nav-link {
+            color: #dce8d4;
+            margin: 0 7px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: #a9ce91;
+        }
+
+
+        .btn-success {
+            background: linear-gradient(135deg, #15b034 0%, #1a9b1a 100%);
+            border: none;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 12px;
+            border-radius: 8px;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-success:hover {
+            background: linear-gradient(135deg, #095a26 0%, #0f7d32 100%);
+            color: #ffffff;
+        }
+
+        .resultbox {
+            background-color: #093c03b5;
+            border: 1px solid #0d6d1e;
+            border-left: 4px solid #105d0f;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .resulttext {
+            color: #66f168;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            background-color: #062e02;
+            border-top: 1px solid #281442;
+            color: #13b319;
+            text-align: center;
+            padding: 14px 0;
+        }
+
+        .navbar {
+    background-color: #0d180cbd;
+    padding: 15px 5%;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+.rohansportfolio {
+    color: #e8eee2 !important;
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.navbar .nav-link {
+    color: #dce8d4;
+    margin: 0 7px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #a9ce91;
+}
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+
+    <div class="container-fluid">
+
+        <a class="rohansportfolio" href="project.html">
+            Rohan's Portfolio
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#portfolioNavbar"
+            aria-controls="portfolioNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="portfolioNavbar">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="project.html">
+                        Meet the Creator
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Seatwork1.html">
+                        Nickname Atlas
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="skillstest.html">
+                        Weather Instrument Checker
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="drill2.html">
+                        School Club Members
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+    <div class="main-container">
+
+        <div class="text-center mb-4">
+            <h2 class="titlething mb-1">Weather Instrument Finder</h2>
+            <div class="smalltext">Weather Instrument Information Board</div>
+        </div>
+
+
+        <div class="card mb-4">
+            <div class="mb-3">
+                <input
+                    type="text"
+                    id="Instrument1"
+                    class="form-control form-control-custom"
+                    placeholder="Enter a weather instrument."
+                >
+            </div>
+
+        <button
+        id="btn-submit"
+        class="btn btn-success w-100"
+        py-click="search_instrument">
+        Identify Weather Instrument
+        </button>
+        </div>
+
+        <div class="resultbox mb-3">
+            <p class="resulttext">
+                <b>Weather Instrument:</b> <span id="Instrument">-</span>
+            </p>
+
+            <p class="resulttext">
+                <b>Measures:</b> <span id="Measures">-</span>
+            </p>
+
+            <p class="resulttext">
+                <b>Unit of Measurement:</b> <span id="Unit">-</span>
+            </p>
+
+            <p class="resulttext mb-0">
+                <b>Purpose:</b> <span id="Purpose">-</span>
+            </p>
+        </div>
+
+    </div>
+
+    <footer>
+        Rohan Tabasan | 10-Ruby
+    </footer>
+
+    <script type="py" src="Skillstest.py" config='{"packages": []}'></script>
+        <a class="navbar-brand text-light fw-bold" href="index.html">
+            Rohan's Portfolio 🌿
+        </a>
+
+        <div class="collapse navbar-collapse" id="portfolioNavbar">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="project.html">
+                        Meet the Creator
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="Seatwork1.html">
+                        Nickname Atlas
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="Drill2.html">
+                        School Club Members
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</body>
+</html>
